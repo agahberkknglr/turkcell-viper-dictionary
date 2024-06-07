@@ -101,14 +101,11 @@
 		0856DB142C13255300B5B9D2 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				0856DB152C13255300B5B9D2 /* AppDelegate.swift */,
-				0856DB172C13255300B5B9D2 /* SceneDelegate.swift */,
+				0856DB4A2C13311900B5B9D2 /* Module */,
+				0856DB482C1330D200B5B9D2 /* App */,
+				0856DB492C1330DD00B5B9D2 /* Resources */,
 				0856DB192C13255300B5B9D2 /* ViewController.swift */,
-				0856DB1B2C13255300B5B9D2 /* Main.storyboard */,
-				0856DB212C13255400B5B9D2 /* Assets.xcassets */,
-				0856DB232C13255400B5B9D2 /* LaunchScreen.storyboard */,
 				0856DB262C13255400B5B9D2 /* Info.plist */,
-				0856DB1E2C13255300B5B9D2 /* Dictionary.xcdatamodeld */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -128,6 +125,89 @@
 				0856DB3B2C13255400B5B9D2 /* DictionaryUITestsLaunchTests.swift */,
 			);
 			path = DictionaryUITests;
+			sourceTree = "<group>";
+		};
+		0856DB482C1330D200B5B9D2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0856DB152C13255300B5B9D2 /* AppDelegate.swift */,
+				0856DB172C13255300B5B9D2 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0856DB492C1330DD00B5B9D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0856DB512C13319800B5B9D2 /* Utils */,
+				0856DB502C13318C00B5B9D2 /* View */,
+				0856DB4F2C13318600B5B9D2 /* Ext */,
+				0856DB1E2C13255300B5B9D2 /* Dictionary.xcdatamodeld */,
+				0856DB1B2C13255300B5B9D2 /* Main.storyboard */,
+				0856DB232C13255400B5B9D2 /* LaunchScreen.storyboard */,
+				0856DB212C13255400B5B9D2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0856DB4A2C13311900B5B9D2 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				0856DB4E2C13315100B5B9D2 /* Detail */,
+				0856DB4D2C13312D00B5B9D2 /* Search */,
+				0856DB4C2C13312700B5B9D2 /* Splash */,
+				0856DB4B2C13312000B5B9D2 /* Base */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		0856DB4B2C13312000B5B9D2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0856DB4C2C13312700B5B9D2 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		0856DB4D2C13312D00B5B9D2 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0856DB4E2C13315100B5B9D2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		0856DB4F2C13318600B5B9D2 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ext;
+			sourceTree = "<group>";
+		};
+		0856DB502C13318C00B5B9D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0856DB512C13319800B5B9D2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
