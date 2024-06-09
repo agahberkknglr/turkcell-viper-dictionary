@@ -16,5 +16,9 @@ protocol SplashInteractorOutputProtocol {
 }
 
 final class SplashInteractor {
+    var output: SplashInteractorOutputProtocol?
+}
+
+extension SplashInteractor: SplashInteractorProtocol {
     
 }

@@ -7,15 +7,22 @@
 
 import UIKit
 
-protocol SplashViewControllerProtocol {
+protocol SplashViewControllerProtocol: AnyObject {
     
 }
 
 final class SplashViewController: BaseViewController {
 
+    var presenter: SplashPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .orange
+        presenter.viewDidAppear()
     }
+    
+}
+
+extension SplashViewController: SplashViewControllerProtocol {
     
 }
