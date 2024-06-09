@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="Dictionary" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="HLm-3G-9h9" id="hNg-Ab-o1q"/>
+                <outlet property="searchButtonBottomConstraint" destination="aDM-Fw-jCN" id="ad4-1L-6YF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsV-92-zUq">
+                    <rect key="frame" x="80" y="751" width="233" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Search"/>
+                    <connections>
+                        <action selector="searchButtonAction:" destination="-1" eventType="touchUpInside" id="vED-gZ-58t"/>
+                    </connections>
+                </button>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HLm-3G-9h9">
+                    <rect key="frame" x="16" y="91" width="361" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0ys-Md-1iC"/>
+                    </connections>
+                </searchBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HLm-3G-9h9" secondAttribute="trailing" constant="16" id="7eJ-uQ-RNI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IsV-92-zUq" secondAttribute="trailing" constant="80" id="A9n-TG-Bb1"/>
+                <constraint firstItem="HLm-3G-9h9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ber-r3-tw5"/>
+                <constraint firstItem="IsV-92-zUq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JVr-zZ-xoW"/>
+                <constraint firstItem="HLm-3G-9h9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TqE-Ai-XdP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IsV-92-zUq" secondAttribute="bottom" constant="32" id="aDM-Fw-jCN"/>
+                <constraint firstItem="HLm-3G-9h9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="bF2-4j-YAP"/>
+                <constraint firstItem="IsV-92-zUq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="tG7-GG-tIn"/>
+            </constraints>
+            <point key="canvasLocation" x="116.79389312977099" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

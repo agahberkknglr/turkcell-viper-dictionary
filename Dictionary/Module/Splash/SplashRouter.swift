@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
-enum SplashRouters {
+enum SplashRoutes {
     case search
 }
 
 protocol SplashRouterProtocol {
-    func navigate(_ route: SplashRouters)
+    func navigate(_ route: SplashRoutes)
 }
 
 final class SplashRouter {
@@ -34,10 +35,14 @@ final class SplashRouter {
 }
 
 extension SplashRouter: SplashRouterProtocol {
-    func navigate(_ route: SplashRouters) {
+    func navigate(_ route: SplashRoutes) {
+        print("navigate splash")
         switch route {
         case .search:
-            break
+            guard let window = viewController?.view.window else { return }
+            let searchVC = SearchRouter.createModule()
+            let navigationController = UINavigationController(rootViewController: searchVC)
+            window.rootViewController = navigationController
         }
     }
 }

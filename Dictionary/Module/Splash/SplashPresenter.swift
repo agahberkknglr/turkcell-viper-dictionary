@@ -24,9 +24,11 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     func viewDidAppear() {
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.router.navigate(.search)
+        }
     }
-    
+
 }
 
 extension SplashPresenter: SplashInteractorOutputProtocol {

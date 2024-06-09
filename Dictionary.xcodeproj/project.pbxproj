@@ -28,6 +28,11 @@
 		0856DB652C154F4500B5B9D2 /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB642C154F4500B5B9D2 /* WordData.swift */; };
 		0856DB672C1550E500B5B9D2 /* WordSynonymData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB662C1550E500B5B9D2 /* WordSynonymData.swift */; };
 		0856DB692C1551C700B5B9D2 /* WordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB682C1551C700B5B9D2 /* WordService.swift */; };
+		0856DB6C2C155F9300B5B9D2 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0856DB6B2C155F9300B5B9D2 /* SearchViewController.xib */; };
+		0856DB6D2C155F9300B5B9D2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB6A2C155F9300B5B9D2 /* SearchViewController.swift */; };
+		0856DB6F2C155FAE00B5B9D2 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB6E2C155FAE00B5B9D2 /* SearchInteractor.swift */; };
+		0856DB712C155FBA00B5B9D2 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB702C155FBA00B5B9D2 /* SearchPresenter.swift */; };
+		0856DB732C155FC700B5B9D2 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB722C155FC700B5B9D2 /* SearchRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,11 @@
 		0856DB642C154F4500B5B9D2 /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
 		0856DB662C1550E500B5B9D2 /* WordSynonymData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSynonymData.swift; sourceTree = "<group>"; };
 		0856DB682C1551C700B5B9D2 /* WordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordService.swift; sourceTree = "<group>"; };
+		0856DB6A2C155F9300B5B9D2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0856DB6B2C155F9300B5B9D2 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		0856DB6E2C155FAE00B5B9D2 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		0856DB702C155FBA00B5B9D2 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		0856DB722C155FC700B5B9D2 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +218,11 @@
 		0856DB4D2C13312D00B5B9D2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0856DB6A2C155F9300B5B9D2 /* SearchViewController.swift */,
+				0856DB6B2C155F9300B5B9D2 /* SearchViewController.xib */,
+				0856DB6E2C155FAE00B5B9D2 /* SearchInteractor.swift */,
+				0856DB702C155FBA00B5B9D2 /* SearchPresenter.swift */,
+				0856DB722C155FC700B5B9D2 /* SearchRouter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -366,6 +381,7 @@
 				0856DB222C13255400B5B9D2 /* Assets.xcassets in Resources */,
 				0856DB252C13255400B5B9D2 /* Base in Resources */,
 				0856DB1D2C13255300B5B9D2 /* Base in Resources */,
+				0856DB6C2C155F9300B5B9D2 /* SearchViewController.xib in Resources */,
 				0856DB562C13332200B5B9D2 /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +407,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0856DB6D2C155F9300B5B9D2 /* SearchViewController.swift in Sources */,
 				0856DB532C13326B00B5B9D2 /* BaseViewController.swift in Sources */,
+				0856DB6F2C155FAE00B5B9D2 /* SearchInteractor.swift in Sources */,
 				0856DB592C13333C00B5B9D2 /* SplashInteractor.swift in Sources */,
 				0856DB1A2C13255300B5B9D2 /* ViewController.swift in Sources */,
 				0856DB692C1551C700B5B9D2 /* WordService.swift in Sources */,
@@ -401,8 +419,10 @@
 				0856DB202C13255300B5B9D2 /* Dictionary.xcdatamodeld in Sources */,
 				0856DB672C1550E500B5B9D2 /* WordSynonymData.swift in Sources */,
 				0856DB572C13332200B5B9D2 /* SplashViewController.swift in Sources */,
+				0856DB732C155FC700B5B9D2 /* SearchRouter.swift in Sources */,
 				0856DB162C13255300B5B9D2 /* AppDelegate.swift in Sources */,
 				0856DB5D2C13335900B5B9D2 /* SplashRouter.swift in Sources */,
+				0856DB712C155FBA00B5B9D2 /* SearchPresenter.swift in Sources */,
 				0856DB182C13255300B5B9D2 /* SceneDelegate.swift in Sources */,
 				0856DB652C154F4500B5B9D2 /* WordData.swift in Sources */,
 			);

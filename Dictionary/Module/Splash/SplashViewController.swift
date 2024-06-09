@@ -17,7 +17,6 @@ final class SplashViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
         presenter.viewDidAppear()
     }
     
