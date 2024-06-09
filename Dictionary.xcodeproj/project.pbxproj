@@ -17,6 +17,17 @@
 		0856DB302C13255400B5B9D2 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB2F2C13255400B5B9D2 /* DictionaryTests.swift */; };
 		0856DB3A2C13255400B5B9D2 /* DictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB392C13255400B5B9D2 /* DictionaryUITests.swift */; };
 		0856DB3C2C13255400B5B9D2 /* DictionaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB3B2C13255400B5B9D2 /* DictionaryUITestsLaunchTests.swift */; };
+		0856DB532C13326B00B5B9D2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB522C13326B00B5B9D2 /* BaseViewController.swift */; };
+		0856DB562C13332200B5B9D2 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0856DB552C13332200B5B9D2 /* SplashViewController.xib */; };
+		0856DB572C13332200B5B9D2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB542C13332200B5B9D2 /* SplashViewController.swift */; };
+		0856DB592C13333C00B5B9D2 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB582C13333C00B5B9D2 /* SplashInteractor.swift */; };
+		0856DB5B2C13334800B5B9D2 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB5A2C13334800B5B9D2 /* SplashPresenter.swift */; };
+		0856DB5D2C13335900B5B9D2 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB5C2C13335900B5B9D2 /* SplashRouter.swift */; };
+		0856DB602C1546A400B5B9D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB5F2C1546A400B5B9D2 /* API.swift */; };
+		0856DB622C154B2000B5B9D2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB612C154B2000B5B9D2 /* NetworkManager.swift */; };
+		0856DB652C154F4500B5B9D2 /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB642C154F4500B5B9D2 /* WordData.swift */; };
+		0856DB672C1550E500B5B9D2 /* WordSynonymData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB662C1550E500B5B9D2 /* WordSynonymData.swift */; };
+		0856DB692C1551C700B5B9D2 /* WordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB682C1551C700B5B9D2 /* WordService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +62,17 @@
 		0856DB352C13255400B5B9D2 /* DictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0856DB392C13255400B5B9D2 /* DictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryUITests.swift; sourceTree = "<group>"; };
 		0856DB3B2C13255400B5B9D2 /* DictionaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0856DB522C13326B00B5B9D2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0856DB542C13332200B5B9D2 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0856DB552C13332200B5B9D2 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		0856DB582C13333C00B5B9D2 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		0856DB5A2C13334800B5B9D2 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		0856DB5C2C13335900B5B9D2 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		0856DB5F2C1546A400B5B9D2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0856DB612C154B2000B5B9D2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0856DB642C154F4500B5B9D2 /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
+		0856DB662C1550E500B5B9D2 /* WordSynonymData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSynonymData.swift; sourceTree = "<group>"; };
+		0856DB682C1551C700B5B9D2 /* WordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +123,7 @@
 		0856DB142C13255300B5B9D2 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				0856DB5E2C15469900B5B9D2 /* Network */,
 				0856DB4A2C13311900B5B9D2 /* Module */,
 				0856DB482C1330D200B5B9D2 /* App */,
 				0856DB492C1330DD00B5B9D2 /* Resources */,
@@ -153,6 +176,7 @@
 		0856DB4A2C13311900B5B9D2 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				0856DB632C154D0800B5B9D2 /* Entity */,
 				0856DB4E2C13315100B5B9D2 /* Detail */,
 				0856DB4D2C13312D00B5B9D2 /* Search */,
 				0856DB4C2C13312700B5B9D2 /* Splash */,
@@ -164,6 +188,7 @@
 		0856DB4B2C13312000B5B9D2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0856DB522C13326B00B5B9D2 /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -171,6 +196,11 @@
 		0856DB4C2C13312700B5B9D2 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				0856DB542C13332200B5B9D2 /* SplashViewController.swift */,
+				0856DB552C13332200B5B9D2 /* SplashViewController.xib */,
+				0856DB582C13333C00B5B9D2 /* SplashInteractor.swift */,
+				0856DB5A2C13334800B5B9D2 /* SplashPresenter.swift */,
+				0856DB5C2C13335900B5B9D2 /* SplashRouter.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -208,6 +238,25 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0856DB5E2C15469900B5B9D2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0856DB5F2C1546A400B5B9D2 /* API.swift */,
+				0856DB612C154B2000B5B9D2 /* NetworkManager.swift */,
+				0856DB682C1551C700B5B9D2 /* WordService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0856DB632C154D0800B5B9D2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0856DB642C154F4500B5B9D2 /* WordData.swift */,
+				0856DB662C1550E500B5B9D2 /* WordSynonymData.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +366,7 @@
 				0856DB222C13255400B5B9D2 /* Assets.xcassets in Resources */,
 				0856DB252C13255400B5B9D2 /* Base in Resources */,
 				0856DB1D2C13255300B5B9D2 /* Base in Resources */,
+				0856DB562C13332200B5B9D2 /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +391,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0856DB532C13326B00B5B9D2 /* BaseViewController.swift in Sources */,
+				0856DB592C13333C00B5B9D2 /* SplashInteractor.swift in Sources */,
 				0856DB1A2C13255300B5B9D2 /* ViewController.swift in Sources */,
+				0856DB692C1551C700B5B9D2 /* WordService.swift in Sources */,
+				0856DB5B2C13334800B5B9D2 /* SplashPresenter.swift in Sources */,
+				0856DB622C154B2000B5B9D2 /* NetworkManager.swift in Sources */,
+				0856DB602C1546A400B5B9D2 /* API.swift in Sources */,
 				0856DB202C13255300B5B9D2 /* Dictionary.xcdatamodeld in Sources */,
+				0856DB672C1550E500B5B9D2 /* WordSynonymData.swift in Sources */,
+				0856DB572C13332200B5B9D2 /* SplashViewController.swift in Sources */,
 				0856DB162C13255300B5B9D2 /* AppDelegate.swift in Sources */,
+				0856DB5D2C13335900B5B9D2 /* SplashRouter.swift in Sources */,
 				0856DB182C13255300B5B9D2 /* SceneDelegate.swift in Sources */,
+				0856DB652C154F4500B5B9D2 /* WordData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
