@@ -33,6 +33,13 @@
 		0856DB6F2C155FAE00B5B9D2 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB6E2C155FAE00B5B9D2 /* SearchInteractor.swift */; };
 		0856DB712C155FBA00B5B9D2 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB702C155FBA00B5B9D2 /* SearchPresenter.swift */; };
 		0856DB732C155FC700B5B9D2 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856DB722C155FC700B5B9D2 /* SearchRouter.swift */; };
+		0878EADE2C167B25007885E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EADC2C167B25007885E0 /* DetailViewController.swift */; };
+		0878EADF2C167B25007885E0 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0878EADD2C167B25007885E0 /* DetailViewController.xib */; };
+		0878EAE12C167B40007885E0 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAE02C167B40007885E0 /* DetailInteractor.swift */; };
+		0878EAE32C167BBA007885E0 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAE22C167BBA007885E0 /* DetailPresenter.swift */; };
+		0878EAE52C167BC6007885E0 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAE42C167BC6007885E0 /* DetailRouter.swift */; };
+		0878EAE92C167DE8007885E0 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAE72C167DE8007885E0 /* WordCell.swift */; };
+		0878EAEA2C167DE8007885E0 /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0878EAE82C167DE8007885E0 /* WordCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +90,13 @@
 		0856DB6E2C155FAE00B5B9D2 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		0856DB702C155FBA00B5B9D2 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		0856DB722C155FC700B5B9D2 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		0878EADC2C167B25007885E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0878EADD2C167B25007885E0 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		0878EAE02C167B40007885E0 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		0878EAE22C167BBA007885E0 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		0878EAE42C167BC6007885E0 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		0878EAE72C167DE8007885E0 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		0878EAE82C167DE8007885E0 /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +244,12 @@
 		0856DB4E2C13315100B5B9D2 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				0878EAE62C167DBE007885E0 /* Cell */,
+				0878EADC2C167B25007885E0 /* DetailViewController.swift */,
+				0878EADD2C167B25007885E0 /* DetailViewController.xib */,
+				0878EAE02C167B40007885E0 /* DetailInteractor.swift */,
+				0878EAE22C167BBA007885E0 /* DetailPresenter.swift */,
+				0878EAE42C167BC6007885E0 /* DetailRouter.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -272,6 +292,15 @@
 				0856DB662C1550E500B5B9D2 /* WordSynonymData.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		0878EAE62C167DBE007885E0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0878EAE72C167DE8007885E0 /* WordCell.swift */,
+				0878EAE82C167DE8007885E0 /* WordCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,9 +408,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0856DB222C13255400B5B9D2 /* Assets.xcassets in Resources */,
+				0878EADF2C167B25007885E0 /* DetailViewController.xib in Resources */,
 				0856DB252C13255400B5B9D2 /* Base in Resources */,
 				0856DB1D2C13255300B5B9D2 /* Base in Resources */,
 				0856DB6C2C155F9300B5B9D2 /* SearchViewController.xib in Resources */,
+				0878EAEA2C167DE8007885E0 /* WordCell.xib in Resources */,
 				0856DB562C13332200B5B9D2 /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,15 +439,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0856DB6D2C155F9300B5B9D2 /* SearchViewController.swift in Sources */,
+				0878EAE52C167BC6007885E0 /* DetailRouter.swift in Sources */,
 				0856DB532C13326B00B5B9D2 /* BaseViewController.swift in Sources */,
 				0856DB6F2C155FAE00B5B9D2 /* SearchInteractor.swift in Sources */,
 				0856DB592C13333C00B5B9D2 /* SplashInteractor.swift in Sources */,
 				0856DB1A2C13255300B5B9D2 /* ViewController.swift in Sources */,
+				0878EAE32C167BBA007885E0 /* DetailPresenter.swift in Sources */,
 				0856DB692C1551C700B5B9D2 /* WordService.swift in Sources */,
 				0856DB5B2C13334800B5B9D2 /* SplashPresenter.swift in Sources */,
 				0856DB622C154B2000B5B9D2 /* NetworkManager.swift in Sources */,
 				0856DB602C1546A400B5B9D2 /* API.swift in Sources */,
 				0856DB202C13255300B5B9D2 /* Dictionary.xcdatamodeld in Sources */,
+				0878EAE92C167DE8007885E0 /* WordCell.swift in Sources */,
+				0878EADE2C167B25007885E0 /* DetailViewController.swift in Sources */,
+				0878EAE12C167B40007885E0 /* DetailInteractor.swift in Sources */,
 				0856DB672C1550E500B5B9D2 /* WordSynonymData.swift in Sources */,
 				0856DB572C13332200B5B9D2 /* SplashViewController.swift in Sources */,
 				0856DB732C155FC700B5B9D2 /* SearchRouter.swift in Sources */,
