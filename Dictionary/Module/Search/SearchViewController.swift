@@ -10,15 +10,18 @@ import UIKit
 protocol SearchViewControllerProtocol: AnyObject {
     func setupKeyboardObservers()
     func setupTapGesture()
+    func setupSearchBar()
+    func isSearchBarEmpty()
 }
 
-final class SearchViewController: UIViewController {
+final class SearchViewController: BaseViewController {
     
     var presenter: SearchPresenterProtocol!
 
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchButtonBottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
@@ -31,8 +34,8 @@ final class SearchViewController: UIViewController {
     @IBAction func searchButtonAction(_ sender: UIButton) {
         if let word = searchBar.text {
             presenter.searchButtonTapped(with: word)
+            searchBar.resignFirstResponder()
         }
-        searchBar.resignFirstResponder()
     }
 }
 
@@ -60,17 +63,34 @@ extension SearchViewController: SearchViewControllerProtocol {
         
         let keyboardHeight = keyboardFrame.height
         UIView.animate(withDuration: 0.3) {
-            self.searchButtonBottomConstraint.constant = keyboardHeight + 10 // Adjust this value as needed
+            self.searchButtonBottomConstraint.constant = keyboardHeight + 10
             self.view.layoutIfNeeded()
         }
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
         UIView.animate(withDuration: 0.3) {
-            self.searchButtonBottomConstraint.constant = 20 // Original bottom constraint value
+            self.searchButtonBottomConstraint.constant = 20
             self.view.layoutIfNeeded()
         }
     }
     
+    func setupSearchBar() {
+        searchBar.delegate = self
+        searchBar.returnKeyType = .search
+    }
     
+    func isSearchBarEmpty() {
+        searchButton.isEnabled = false
+        searchBar.enablesReturnKeyAutomatically = true
+    }
+    
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let searchBarHasText = !searchText.isEmpty
+        searchButton.isEnabled = searchBarHasText
+        searchBar.enablesReturnKeyAutomatically = true
+    }
 }

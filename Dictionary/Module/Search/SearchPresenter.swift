@@ -29,6 +29,8 @@ extension SearchPresenter: SearchPresenterProtocol {
     func viewDidLoad() {
         view.setupKeyboardObservers()
         view.setupTapGesture()
+        view.setupSearchBar()
+        view.isSearchBarEmpty()
     }
     
     func searchButtonTapped(with word: String) {

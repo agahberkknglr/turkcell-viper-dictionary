@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="Dictionary" customModuleProvider="target">
             <connections>
                 <outlet property="searchBar" destination="HLm-3G-9h9" id="hNg-Ab-o1q"/>
+                <outlet property="searchButton" destination="IsV-92-zUq" id="Pi2-Pn-FtR"/>
                 <outlet property="searchButtonBottomConstraint" destination="aDM-Fw-jCN" id="ad4-1L-6YF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
