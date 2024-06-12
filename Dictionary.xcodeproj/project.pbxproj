@@ -40,6 +40,7 @@
 		0878EAE52C167BC6007885E0 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAE42C167BC6007885E0 /* DetailRouter.swift */; };
 		0878EAE92C167DE8007885E0 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAE72C167DE8007885E0 /* WordCell.swift */; };
 		0878EAEA2C167DE8007885E0 /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0878EAE82C167DE8007885E0 /* WordCell.xib */; };
+		0878EAF62C18DAFC007885E0 /* WordCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		0878EAE42C167BC6007885E0 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		0878EAE72C167DE8007885E0 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		0878EAE82C167DE8007885E0 /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
+		0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCellPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,9 +188,6 @@
 		0856DB492C1330DD00B5B9D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0856DB512C13319800B5B9D2 /* Utils */,
-				0856DB502C13318C00B5B9D2 /* View */,
-				0856DB4F2C13318600B5B9D2 /* Ext */,
 				0856DB1E2C13255300B5B9D2 /* Dictionary.xcdatamodeld */,
 				0856DB1B2C13255300B5B9D2 /* Main.storyboard */,
 				0856DB232C13255400B5B9D2 /* LaunchScreen.storyboard */,
@@ -254,27 +253,6 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		0856DB4F2C13318600B5B9D2 /* Ext */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Ext;
-			sourceTree = "<group>";
-		};
-		0856DB502C13318C00B5B9D2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0856DB512C13319800B5B9D2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		0856DB5E2C15469900B5B9D2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +277,7 @@
 			children = (
 				0878EAE72C167DE8007885E0 /* WordCell.swift */,
 				0878EAE82C167DE8007885E0 /* WordCell.xib */,
+				0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -460,6 +439,7 @@
 				0856DB5D2C13335900B5B9D2 /* SplashRouter.swift in Sources */,
 				0856DB712C155FBA00B5B9D2 /* SearchPresenter.swift in Sources */,
 				0856DB182C13255300B5B9D2 /* SceneDelegate.swift in Sources */,
+				0878EAF62C18DAFC007885E0 /* WordCellPresenter.swift in Sources */,
 				0856DB652C154F4500B5B9D2 /* WordData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

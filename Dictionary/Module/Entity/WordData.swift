@@ -11,18 +11,18 @@ struct WordData: Decodable{
     let word, phonetic: String?
     let phonetics: [Phonetics]?
     let meanings: [Meanings]?
-}
-
-struct Phonetics: Decodable {
-    let text, audio: String?
-}
-
-struct Meanings: Decodable {
-    let partOfSpeech: String?
-    let definitions: [Definitions]?
-}
-
-struct Definitions: Decodable {
-    let definition, example: String?
     
+    struct Phonetics: Decodable {
+        let text, audio: String?
+    }
+
+    struct Meanings: Decodable {
+        let partOfSpeech: String?
+        let definitions: [Definitions]?
+        
+        struct Definitions: Decodable {
+            let definition, example: String?
+            
+        }
+    }
 }

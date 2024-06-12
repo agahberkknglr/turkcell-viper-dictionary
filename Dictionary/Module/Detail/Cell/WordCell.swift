@@ -7,17 +7,36 @@
 
 import UIKit
 
+protocol WordCellProtocol: AnyObject {
+    func setPartOfSpeechLabel(_ text: String)
+    func setDefinitionLabel(_ text: String)
+}
+
 class WordCell: UITableViewCell {
+    
+    static let identifier = "WordCell"
+
+    @IBOutlet weak var partOfSpeechLabel: UILabel!
+    @IBOutlet weak var definitionLabel: UILabel!
+    
+    var cellPresenter: WordCellPresenterProtocol! {
+        didSet {
+            cellPresenter.load()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+extension WordCell: WordCellProtocol {
+    func setPartOfSpeechLabel(_ text: String) {
+        self.partOfSpeechLabel.text = text
     }
     
+    func setDefinitionLabel(_ text: String) {
+        self.definitionLabel.text = text
+        print("Setting part of definiton label to: \(text)")
+    }
 }

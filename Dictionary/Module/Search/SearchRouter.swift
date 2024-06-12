@@ -31,8 +31,7 @@ final class SearchRouter {
 
 extension SearchRouter: SearchRouterProtocol {
     func navigateToDetail(with word: String) {
-        print("navigate to detail \(word)")
-        //let detailVC = DetailRouter.createDetailModule(with: word)
-        //viewController?.navigationController?.pushViewController(detailVC, animated: true)
+        let detailVC = DetailRouter.createDetailModule(with: word)
+        viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
