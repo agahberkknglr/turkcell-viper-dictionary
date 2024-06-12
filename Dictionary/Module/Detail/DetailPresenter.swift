@@ -11,8 +11,8 @@ protocol DetailPresenterProtocol {
     func viewDidLoad()
     func numberOfSections() -> Int
     func numberOfRowsInSection(_ section: Int) -> Int
-    //func cellForRowAt(indexPath: IndexPath) -> WordCellPresenterProtocol
     func meaningForSection(_ section: Int) -> WordData.Meanings
+    func tapPlaySound()
     
 }
 
@@ -23,7 +23,7 @@ final class DetailPresenter {
     let interactor: DetailInteractorProtocol
     let word: String
     private var wordData: WordData?
-    //private var cellPresenters: [WordCellPresenter] = []
+    private var audioURL: URL?
     
     init(view: DetailViewControllerProtocol? = nil, router: DetailRouterProtocol, interactor: DetailInteractorProtocol, word: String) {
         self.view = view
@@ -48,49 +48,33 @@ extension DetailPresenter: DetailPresenterProtocol {
         wordData?.meanings?[section].definitions?.count ?? 0
     }
     
-    //func cellForRowAt(indexPath: IndexPath) -> WordCellPresenterProtocol {
-    //    return cellPresenters[indexPath.row]
-    //}
-    
     func meaningForSection(_ section: Int) -> WordData.Meanings {
         return wordData!.meanings![section]
     }
     
-    //func meaningForRowAt(indexPath: IndexPath) -> WordData.Meanings? {
-    //    //return wordData!.meanings![indexPath.row]
-    //    guard let meanings = wordData?.meanings, indexPath.row < meanings.count else {
-    //        return nil
-    //    }
-    //    return meanings[indexPath.row]
-    //}
+    func tapPlaySound() {
+        if let audioURL = audioURL {
+            view?.playAudio(from: audioURL)
+        }
+    }
     
 }
 
 extension DetailPresenter: DetailInteractorOutputProtocol {
     func fetchWordOutputs(_ wordData: WordData) {
         self.wordData = wordData
-
-        //if let meanings = wordData.meanings {
-        //    var tempCellPresenters: [WordCellPresenter] = []
-        //    for meaning in meanings {
-        //        guard let partOfSpeech = meaning.partOfSpeech, let definitions = meaning.definitions else {
-        //            continue
-        //        }
-        //        for definition in definitions {
-        //            if let def = definition.definition {
-        //                let presenter = WordCellPresenter(partOfSpeech: partOfSpeech, definition: def)
-        //                tempCellPresenters.append(presenter)
-        //                print(meaning.partOfSpeech ?? "")
-        //                print(def)
-        //            }
-        //        }
-        //    }
-        //    cellPresenters = tempCellPresenters
-        //}
-
         
         view?.setWordTitleLabel(with: wordData.word ?? "")
         view?.setSynonymLabel(with: wordData.phonetic ?? "")
+        
+        if let phonetics = wordData.phonetics, let audioString = phonetics.first(where: { $0.audio != nil && !$0.audio!.isEmpty })?.audio, let url = URL(string: audioString) {
+            self.audioURL = url
+            self.view?.setupSoundButton(isEnabled: true)
+        } else {
+            self.audioURL = nil
+            self.view?.setupSoundButton(isEnabled: false)
+        }
+        
         view?.reloadData()
         
     }

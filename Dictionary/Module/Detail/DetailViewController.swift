@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol DetailViewControllerProtocol: AnyObject {
     func setWordTitleLabel(with text: String)
     func setSynonymLabel(with text: String)
     func setTableView()
     func reloadData()
+    func setupSoundButton(isEnabled: Bool)
+    func playAudio(from url: URL)
 
 }
 
@@ -24,10 +27,16 @@ final class DetailViewController: UIViewController {
     
     var presenter: DetailPresenterProtocol!
     var word: String?
+    private var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+    }
+    
+    @IBAction func wordAudioButtonAction(_ sender: UIButton) {
+        print("tapped")
+        presenter.tapPlaySound()
     }
 }
 
@@ -54,6 +63,19 @@ extension DetailViewController: DetailViewControllerProtocol {
             self.tableView.reloadData()
         }
     }
+    
+    func setupSoundButton(isEnabled: Bool) {
+        DispatchQueue.main.async {
+            self.wordAudioButton.isEnabled = isEnabled
+        }
+    }
+    
+    func playAudio(from url: URL) {
+        DispatchQueue.main.async {
+            self.player = AVPlayer(url: url)
+            self.player?.play()
+        }
+    }
 }
 
 extension DetailViewController: UITableViewDataSource {
@@ -70,7 +92,8 @@ extension DetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: WordCell.identifier, for: indexPath) as! WordCell
         let meaning = presenter.meaningForSection(indexPath.section)
         let definition = meaning.definitions?[indexPath.row].definition ?? ""
-        let cellPresenter = WordCellPresenter(view: cell, partOfSpeech: meaning.partOfSpeech ?? "", definition: definition)
+        let example = meaning.definitions?[indexPath.row].example ?? ""
+        let cellPresenter = WordCellPresenter(view: cell, partOfSpeech: meaning.partOfSpeech ?? "", definition: definition, example: example , index: indexPath.row)
         cell.cellPresenter = cellPresenter
         return cell
 

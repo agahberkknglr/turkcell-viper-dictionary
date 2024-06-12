@@ -41,6 +41,7 @@
 		0878EAE92C167DE8007885E0 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAE72C167DE8007885E0 /* WordCell.swift */; };
 		0878EAEA2C167DE8007885E0 /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0878EAE82C167DE8007885E0 /* WordCell.xib */; };
 		0878EAF62C18DAFC007885E0 /* WordCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */; };
+		0878EAFF2C1930D0007885E0 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAFE2C1930D0007885E0 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		0878EAE72C167DE8007885E0 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		0878EAE82C167DE8007885E0 /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
 		0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCellPresenter.swift; sourceTree = "<group>"; };
+		0878EAFE2C1930D0007885E0 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			children = (
 				0856DB642C154F4500B5B9D2 /* WordData.swift */,
 				0856DB662C1550E500B5B9D2 /* WordSynonymData.swift */,
+				0878EAFE2C1930D0007885E0 /* ErrorResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				0856DB532C13326B00B5B9D2 /* BaseViewController.swift in Sources */,
 				0856DB6F2C155FAE00B5B9D2 /* SearchInteractor.swift in Sources */,
 				0856DB592C13333C00B5B9D2 /* SplashInteractor.swift in Sources */,
+				0878EAFF2C1930D0007885E0 /* ErrorResponse.swift in Sources */,
 				0856DB1A2C13255300B5B9D2 /* ViewController.swift in Sources */,
 				0878EAE32C167BBA007885E0 /* DetailPresenter.swift in Sources */,
 				0856DB692C1551C700B5B9D2 /* WordService.swift in Sources */,

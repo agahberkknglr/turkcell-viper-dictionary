@@ -29,7 +29,7 @@
                         <action selector="searchButtonAction:" destination="-1" eventType="touchUpInside" id="vED-gZ-58t"/>
                     </connections>
                 </button>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HLm-3G-9h9">
+                <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="HLm-3G-9h9">
                     <rect key="frame" x="16" y="91" width="361" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
