@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailRouterProtocol {
-    
+    func navigateToSynonymDetail(_ word: String)
 }
 
 final class DetailRouter {
@@ -29,4 +29,8 @@ final class DetailRouter {
 
 extension DetailRouter: DetailRouterProtocol {
     
+    func navigateToSynonymDetail(_ word: String) {
+        let synonymDetail = DetailRouter.createDetailModule(with: word)
+        viewController?.navigationController?.pushViewController(synonymDetail, animated: true)
+    }
 }

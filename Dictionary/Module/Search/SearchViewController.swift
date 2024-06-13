@@ -12,6 +12,8 @@ protocol SearchViewControllerProtocol: AnyObject {
     func setupTapGesture()
     func setupSearchBar()
     func isSearchBarEmpty()
+    func setTableView()
+    func updateSearchHistory()
 }
 
 final class SearchViewController: BaseViewController {
@@ -21,10 +23,15 @@ final class SearchViewController: BaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
     
     deinit {
@@ -43,7 +50,9 @@ extension SearchViewController: SearchViewControllerProtocol {
     
     func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
+        //view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+        tableView.backgroundView?.addGestureRecognizer(tapGesture)
     }
     
     @objc private func dismissKeyboard() {
@@ -85,6 +94,17 @@ extension SearchViewController: SearchViewControllerProtocol {
         searchBar.enablesReturnKeyAutomatically = true
     }
     
+    func setTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "RecentCell", bundle: nil), forCellReuseIdentifier: RecentCell.identifier)
+        tableView.isUserInteractionEnabled = true
+    }
+    
+    func updateSearchHistory() {
+        tableView.reloadData()
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -92,5 +112,33 @@ extension SearchViewController: UISearchBarDelegate {
         let searchBarHasText = !searchText.isEmpty
         searchButton.isEnabled = searchBarHasText
         searchBar.enablesReturnKeyAutomatically = true
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let word = presenter.cellForRowAt(indexPath.row)
+        presenter.searchButtonTapped(with: word)
+    }
+}
+
+extension SearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        presenter.numberOfRowsInSection()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RecentCell.identifier, for: indexPath) as! RecentCell
+        let recent = presenter.cellForRowAt(indexPath.row)
+        let cellPresenter = RecentCellPresenter(view: cell, recent: recent.capitalized)
+        cell.cellPresenter = cellPresenter
+        cell.selectionStyle = .default
+        return cell
+    }
+}
+
+extension SearchViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

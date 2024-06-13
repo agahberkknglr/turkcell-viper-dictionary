@@ -42,6 +42,17 @@
 		0878EAEA2C167DE8007885E0 /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0878EAE82C167DE8007885E0 /* WordCell.xib */; };
 		0878EAF62C18DAFC007885E0 /* WordCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */; };
 		0878EAFF2C1930D0007885E0 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878EAFE2C1930D0007885E0 /* ErrorResponse.swift */; };
+		087C371B2C1AF41400E4904E /* RecentCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C371A2C1AF41400E4904E /* RecentCellPresenter.swift */; };
+		087C371E2C1AF71A00E4904E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C371D2C1AF71A00E4904E /* CoreDataManager.swift */; };
+		087C37212C1B1AA400E4904E /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C371F2C1B1AA400E4904E /* FilterCell.swift */; };
+		087C37222C1B1AA400E4904E /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087C37202C1B1AA400E4904E /* FilterCell.xib */; };
+		087C37242C1B1D3300E4904E /* FilterCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37232C1B1D3300E4904E /* FilterCellPresenter.swift */; };
+		08FD6EC12C1A48710035FB2A /* SynonymCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */; };
+		08FD6EC22C1A48710035FB2A /* SynonymCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FD6EC02C1A48710035FB2A /* SynonymCell.xib */; };
+		08FD6EC42C1A4A1A0035FB2A /* SynonymCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */; };
+		08FD6EC72C1A75660035FB2A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EC62C1A75660035FB2A /* LoadingView.swift */; };
+		08FD6ECC2C1AF27E0035FB2A /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6ECA2C1AF27E0035FB2A /* RecentCell.swift */; };
+		08FD6ECD2C1AF27E0035FB2A /* RecentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FD6ECB2C1AF27E0035FB2A /* RecentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +112,17 @@
 		0878EAE82C167DE8007885E0 /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
 		0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCellPresenter.swift; sourceTree = "<group>"; };
 		0878EAFE2C1930D0007885E0 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		087C371A2C1AF41400E4904E /* RecentCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCellPresenter.swift; sourceTree = "<group>"; };
+		087C371D2C1AF71A00E4904E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		087C371F2C1B1AA400E4904E /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		087C37202C1B1AA400E4904E /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		087C37232C1B1D3300E4904E /* FilterCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellPresenter.swift; sourceTree = "<group>"; };
+		08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCell.swift; sourceTree = "<group>"; };
+		08FD6EC02C1A48710035FB2A /* SynonymCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SynonymCell.xib; sourceTree = "<group>"; };
+		08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCellPresenter.swift; sourceTree = "<group>"; };
+		08FD6EC62C1A75660035FB2A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		08FD6ECA2C1AF27E0035FB2A /* RecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
+		08FD6ECB2C1AF27E0035FB2A /* RecentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +212,8 @@
 		0856DB492C1330DD00B5B9D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				087C371C2C1AF6FF00E4904E /* Utils */,
+				08FD6EC52C1A752F0035FB2A /* View */,
 				0856DB1E2C13255300B5B9D2 /* Dictionary.xcdatamodeld */,
 				0856DB1B2C13255300B5B9D2 /* Main.storyboard */,
 				0856DB232C13255400B5B9D2 /* LaunchScreen.storyboard */,
@@ -233,6 +257,7 @@
 		0856DB4D2C13312D00B5B9D2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				08FD6EC92C1AF25A0035FB2A /* Cell */,
 				0856DB6A2C155F9300B5B9D2 /* SearchViewController.swift */,
 				0856DB6B2C155F9300B5B9D2 /* SearchViewController.xib */,
 				0856DB6E2C155FAE00B5B9D2 /* SearchInteractor.swift */,
@@ -278,9 +303,73 @@
 		0878EAE62C167DBE007885E0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				08FD6EBD2C1A48400035FB2A /* CollectionViewCell */,
+				08FD6EBC2C1A482F0035FB2A /* TableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		087C371C2C1AF6FF00E4904E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				087C371D2C1AF71A00E4904E /* CoreDataManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		08FD6EBC2C1A482F0035FB2A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				0878EAE72C167DE8007885E0 /* WordCell.swift */,
 				0878EAE82C167DE8007885E0 /* WordCell.xib */,
 				0878EAF52C18DAFC007885E0 /* WordCellPresenter.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		08FD6EBD2C1A48400035FB2A /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				08FD6EC82C1AECB60035FB2A /* FilterCell */,
+				08FD6EBE2C1A48510035FB2A /* SynonymCell */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		08FD6EBE2C1A48510035FB2A /* SynonymCell */ = {
+			isa = PBXGroup;
+			children = (
+				08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */,
+				08FD6EC02C1A48710035FB2A /* SynonymCell.xib */,
+				08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */,
+			);
+			path = SynonymCell;
+			sourceTree = "<group>";
+		};
+		08FD6EC52C1A752F0035FB2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08FD6EC62C1A75660035FB2A /* LoadingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08FD6EC82C1AECB60035FB2A /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				087C371F2C1B1AA400E4904E /* FilterCell.swift */,
+				087C37202C1B1AA400E4904E /* FilterCell.xib */,
+				087C37232C1B1D3300E4904E /* FilterCellPresenter.swift */,
+			);
+			path = FilterCell;
+			sourceTree = "<group>";
+		};
+		08FD6EC92C1AF25A0035FB2A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				08FD6ECA2C1AF27E0035FB2A /* RecentCell.swift */,
+				08FD6ECB2C1AF27E0035FB2A /* RecentCell.xib */,
+				087C371A2C1AF41400E4904E /* RecentCellPresenter.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -394,8 +483,11 @@
 				0856DB252C13255400B5B9D2 /* Base in Resources */,
 				0856DB1D2C13255300B5B9D2 /* Base in Resources */,
 				0856DB6C2C155F9300B5B9D2 /* SearchViewController.xib in Resources */,
+				08FD6ECD2C1AF27E0035FB2A /* RecentCell.xib in Resources */,
+				08FD6EC22C1A48710035FB2A /* SynonymCell.xib in Resources */,
 				0878EAEA2C167DE8007885E0 /* WordCell.xib in Resources */,
 				0856DB562C13332200B5B9D2 /* SplashViewController.xib in Resources */,
+				087C37222C1B1AA400E4904E /* FilterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,16 +517,23 @@
 				0856DB532C13326B00B5B9D2 /* BaseViewController.swift in Sources */,
 				0856DB6F2C155FAE00B5B9D2 /* SearchInteractor.swift in Sources */,
 				0856DB592C13333C00B5B9D2 /* SplashInteractor.swift in Sources */,
+				087C371B2C1AF41400E4904E /* RecentCellPresenter.swift in Sources */,
+				08FD6EC72C1A75660035FB2A /* LoadingView.swift in Sources */,
 				0878EAFF2C1930D0007885E0 /* ErrorResponse.swift in Sources */,
 				0856DB1A2C13255300B5B9D2 /* ViewController.swift in Sources */,
 				0878EAE32C167BBA007885E0 /* DetailPresenter.swift in Sources */,
 				0856DB692C1551C700B5B9D2 /* WordService.swift in Sources */,
+				087C371E2C1AF71A00E4904E /* CoreDataManager.swift in Sources */,
 				0856DB5B2C13334800B5B9D2 /* SplashPresenter.swift in Sources */,
 				0856DB622C154B2000B5B9D2 /* NetworkManager.swift in Sources */,
 				0856DB602C1546A400B5B9D2 /* API.swift in Sources */,
+				08FD6EC42C1A4A1A0035FB2A /* SynonymCellPresenter.swift in Sources */,
 				0856DB202C13255300B5B9D2 /* Dictionary.xcdatamodeld in Sources */,
+				087C37212C1B1AA400E4904E /* FilterCell.swift in Sources */,
 				0878EAE92C167DE8007885E0 /* WordCell.swift in Sources */,
 				0878EADE2C167B25007885E0 /* DetailViewController.swift in Sources */,
+				08FD6EC12C1A48710035FB2A /* SynonymCell.swift in Sources */,
+				08FD6ECC2C1AF27E0035FB2A /* RecentCell.swift in Sources */,
 				0878EAE12C167B40007885E0 /* DetailInteractor.swift in Sources */,
 				0856DB672C1550E500B5B9D2 /* WordSynonymData.swift in Sources */,
 				0856DB572C13332200B5B9D2 /* SplashViewController.swift in Sources */,
@@ -443,6 +542,7 @@
 				0856DB5D2C13335900B5B9D2 /* SplashRouter.swift in Sources */,
 				0856DB712C155FBA00B5B9D2 /* SearchPresenter.swift in Sources */,
 				0856DB182C13255300B5B9D2 /* SceneDelegate.swift in Sources */,
+				087C37242C1B1D3300E4904E /* FilterCellPresenter.swift in Sources */,
 				0878EAF62C18DAFC007885E0 /* WordCellPresenter.swift in Sources */,
 				0856DB652C154F4500B5B9D2 /* WordData.swift in Sources */,
 			);

@@ -39,13 +39,13 @@ extension WordCell: WordCellProtocol {
         var capilizedText = text
         
         let components = text.components(separatedBy: " - ")
-        var capitalizedComponents = components.map { $0.capitalized }
+        let capitalizedComponents = components.map { $0.capitalized }
         capilizedText = capitalizedComponents.joined(separator: " - ")
         
         let attributedText = NSMutableAttributedString(string: capilizedText)
         if let range = text.range(of: " -") {
             let numberRange = NSRange(location: 0, length: range.lowerBound.utf16Offset(in: capilizedText))
-            attributedText.addAttribute(.foregroundColor, value: UIColor.black, range: numberRange)
+            attributedText.addAttribute(.foregroundColor, value: UIColor.label, range: numberRange)
             attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: 24), range: numberRange)
             
             let wordStartIndex = text.index(after: range.upperBound)

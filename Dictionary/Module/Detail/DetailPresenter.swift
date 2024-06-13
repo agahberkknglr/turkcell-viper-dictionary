@@ -13,7 +13,11 @@ protocol DetailPresenterProtocol {
     func numberOfRowsInSection(_ section: Int) -> Int
     func meaningForSection(_ section: Int) -> WordData.Meanings
     func tapPlaySound()
-    
+    func numberOfItemInSection() -> Int
+    func synonymForSection(_ section: Int) -> String
+    func didSelectSynonym(_ synonym: String)
+    func filterItems() -> Int
+    func cellForFilter(_ index: IndexPath) -> String
 }
 
 final class DetailPresenter {
@@ -24,6 +28,7 @@ final class DetailPresenter {
     let word: String
     private var wordData: WordData?
     private var audioURL: URL?
+    private var wordSynonymData: [String]?
     
     init(view: DetailViewControllerProtocol? = nil, router: DetailRouterProtocol, interactor: DetailInteractorProtocol, word: String) {
         self.view = view
@@ -36,8 +41,12 @@ final class DetailPresenter {
 extension DetailPresenter: DetailPresenterProtocol {
     
     func viewDidLoad() {
+        view?.showLoadingView()
         view?.setTableView()
+        view?.setSynonymCollectionView()
+        view?.setFilterCollectionView()
         interactor.fetchWord(with: word)
+        interactor.fetchWordSynonym(with: word)
     }
     
     func numberOfSections() -> Int {
@@ -58,6 +67,26 @@ extension DetailPresenter: DetailPresenterProtocol {
         }
     }
     
+    func numberOfItemInSection() -> Int {
+        wordSynonymData?.count ?? 0
+    }
+    
+    func synonymForSection(_ section: Int) -> String {
+        wordSynonymData![section]
+    }
+    
+    func didSelectSynonym(_ synonym: String) {
+        CoreDataManager.shared.saveWord(recent: synonym)
+        router.navigateToSynonymDetail(synonym)
+    }
+    
+    func filterItems() -> Int {
+        wordData?.meanings?.count ?? 0
+    }
+    
+    func cellForFilter(_ index: IndexPath) -> String {
+        wordData?.meanings?[index.item].partOfSpeech ?? ""
+    }
 }
 
 extension DetailPresenter: DetailInteractorOutputProtocol {
@@ -74,8 +103,14 @@ extension DetailPresenter: DetailInteractorOutputProtocol {
             self.audioURL = nil
             self.view?.setupSoundButton(isEnabled: false)
         }
-        
+        view?.hideLoadingView()
         view?.reloadData()
-        
+    }
+    
+    func fethcWordSynonymOutputs(_ wordSynonymData: [WordSynonymData]) {
+        let allSynonymData = wordSynonymData
+        let sortedSynonymData = allSynonymData.sorted { ($0.score ?? 0) > ($1.score ?? 0) }
+        self.wordSynonymData = sortedSynonymData.prefix(5).compactMap { $0.word }
+        view?.reloadData()
     }
 }
