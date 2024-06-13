@@ -38,6 +38,7 @@ extension FilterCell: FilterCellProtocol {
         filterLabel.layer.borderWidth = 1
         filterLabel.textColor = UIColor.label
         filterLabel.layer.borderColor = UIColor.label.cgColor
+        filterLabel.backgroundColor = UIColor.systemGray5
     }
     
     func filterLabelIsSelected(_ isSelected: Bool) {
@@ -46,7 +47,6 @@ extension FilterCell: FilterCellProtocol {
         }
         else {
             filterLabel.layer.borderColor = UIColor.label.cgColor
-
         }
         
     }

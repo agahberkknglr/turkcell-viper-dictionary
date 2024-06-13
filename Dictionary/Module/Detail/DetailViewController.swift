@@ -68,6 +68,7 @@ extension DetailViewController: DetailViewControllerProtocol {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.synonymCollectionView.reloadData()
+            self.filterCollectionView.reloadData()
         }
     }
     
@@ -91,6 +92,7 @@ extension DetailViewController: DetailViewControllerProtocol {
     }
     
     func setFilterCollectionView() {
+        filterCollectionView.backgroundColor = .clear
         filterCollectionView.dataSource = self
         filterCollectionView.delegate = self
         filterCollectionView.register(UINib(nibName: "FilterCell", bundle: nil), forCellWithReuseIdentifier: FilterCell.identifier)
@@ -146,10 +148,12 @@ extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.synonymCollectionView {
             let synonym = presenter.synonymForSection(indexPath.item)
+            print("select synonym \(synonym)")
             presenter.didSelectSynonym(synonym)
         } else {
             let filter = presenter.cellForFilter(indexPath)
-            
+            print("selected filter \(filter)")
+            presenter.filterByPartOfSpeech(filter, indexPath)
         }
     }
 }
@@ -175,6 +179,9 @@ extension DetailViewController: UICollectionViewDataSource {
             let filter = presenter.cellForFilter(indexPath)
             let cellPresenter = FilterCellPresenter(view: cell, filter: filter)
             cell.cellPresenter = cellPresenter
+            
+            let isSelected = presenter.getSelectedFilterIndex() == indexPath
+            cell.filterLabelIsSelected(isSelected)
             return cell
         }
         
@@ -211,16 +218,16 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == self.synonymCollectionView {
             let collectionViewWidth = synonymCollectionView.frame.width
             let collectionViewHeight = synonymCollectionView.frame.width
-            let cellWidth = (collectionViewWidth - 18 ) / 4
-            let cellHeight = cellWidth / 2
+            let cellWidth = (collectionViewWidth - 15 ) / 3
+            let cellHeight = cellWidth / 2.5
             
             return CGSize(width: cellWidth , height: cellHeight)
         }
         else {
             let collectionViewWidth = filterCollectionView.frame.width
             let collectionViewHeight = filterCollectionView.frame.width
-            let cellWidth = (collectionViewWidth - 18 ) / 4
-            let cellHeight = cellWidth / 2
+            let cellWidth = (collectionViewWidth - 15 ) / 3
+            let cellHeight = cellWidth / 2.5
             
             return CGSize(width: cellWidth , height: cellHeight)
         }

@@ -39,9 +39,21 @@ class CoreDataManager {
     }
     
     func saveWord(recent: String) {
-        let searchHistory = SearchHistory(context: context)
-        searchHistory.recent = recent
-        saveContext()
+        let fetchRequest: NSFetchRequest<SearchHistory> = SearchHistory.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "recent == %@", recent)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            if results.isEmpty {
+                let searchHistory = SearchHistory(context: context)
+                searchHistory.recent = recent
+                saveContext()
+            } else {
+                print("Word already exists in search history.")
+            }
+        } catch {
+            print("Failed to fetch search history: \(error)")
+        }
     }
     
     func fetchSearchHistory() -> [String] {

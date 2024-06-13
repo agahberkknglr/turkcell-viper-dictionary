@@ -18,6 +18,9 @@ protocol DetailPresenterProtocol {
     func didSelectSynonym(_ synonym: String)
     func filterItems() -> Int
     func cellForFilter(_ index: IndexPath) -> String
+    func filterByPartOfSpeech(_ partOfSpeech: String?, _  indexPath: IndexPath)
+    func getSelectedFilterIndex() -> IndexPath?
+    func meaningsForSelectedPartOfSpeech() -> [WordData.Meanings]
 }
 
 final class DetailPresenter {
@@ -29,6 +32,9 @@ final class DetailPresenter {
     private var wordData: WordData?
     private var audioURL: URL?
     private var wordSynonymData: [String]?
+    private var selectedPartOfSpeech: String?
+    private var selectedFilterIndex: IndexPath?
+    
     
     init(view: DetailViewControllerProtocol? = nil, router: DetailRouterProtocol, interactor: DetailInteractorProtocol, word: String) {
         self.view = view
@@ -50,15 +56,22 @@ extension DetailPresenter: DetailPresenterProtocol {
     }
     
     func numberOfSections() -> Int {
-        wordData?.meanings?.count ?? 0
+        
+        meaningsForSelectedPartOfSpeech().count
+
+        //wordData?.meanings?.count ?? 0
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
-        wordData?.meanings?[section].definitions?.count ?? 0
+        meaningsForSelectedPartOfSpeech()[section].definitions?.count ?? 0
+
+        //wordData?.meanings?[section].definitions?.count ?? 0
     }
     
     func meaningForSection(_ section: Int) -> WordData.Meanings {
-        return wordData!.meanings![section]
+        return meaningsForSelectedPartOfSpeech()[section]
+
+        //return wordData!.meanings![section]
     }
     
     func tapPlaySound() {
@@ -86,6 +99,23 @@ extension DetailPresenter: DetailPresenterProtocol {
     
     func cellForFilter(_ index: IndexPath) -> String {
         wordData?.meanings?[index.item].partOfSpeech ?? ""
+    }
+    
+    func filterByPartOfSpeech(_ partOfSpeech: String?,_ indexPath: IndexPath) {
+        self.selectedPartOfSpeech = partOfSpeech
+        self.selectedFilterIndex = indexPath
+        view?.reloadData()
+    }
+    
+    func getSelectedFilterIndex() -> IndexPath? {
+        return selectedFilterIndex
+    }
+    
+    func meaningsForSelectedPartOfSpeech() -> [WordData.Meanings] {
+        guard let selectedPartOfSpeech = selectedPartOfSpeech, let meanings = wordData?.meanings else {
+            return wordData?.meanings ?? []
+        }
+        return meanings.filter { $0.partOfSpeech == selectedPartOfSpeech }
     }
 }
 
