@@ -211,7 +211,7 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == self.synonymCollectionView {
             let collectionViewWidth = synonymCollectionView.frame.width
             let collectionViewHeight = synonymCollectionView.frame.width
-            let cellWidth = (collectionViewWidth - 18 ) / 5
+            let cellWidth = (collectionViewWidth - 18 ) / 4
             let cellHeight = cellWidth / 2
             
             return CGSize(width: cellWidth , height: cellHeight)
@@ -219,7 +219,7 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
         else {
             let collectionViewWidth = filterCollectionView.frame.width
             let collectionViewHeight = filterCollectionView.frame.width
-            let cellWidth = (collectionViewWidth - 18 ) / 5
+            let cellWidth = (collectionViewWidth - 18 ) / 4
             let cellHeight = cellWidth / 2
             
             return CGSize(width: cellWidth , height: cellHeight)

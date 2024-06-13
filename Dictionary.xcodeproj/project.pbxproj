@@ -47,6 +47,7 @@
 		087C37212C1B1AA400E4904E /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C371F2C1B1AA400E4904E /* FilterCell.swift */; };
 		087C37222C1B1AA400E4904E /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087C37202C1B1AA400E4904E /* FilterCell.xib */; };
 		087C37242C1B1D3300E4904E /* FilterCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37232C1B1D3300E4904E /* FilterCellPresenter.swift */; };
+		087C37652C1B399900E4904E /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37642C1B399900E4904E /* SelfSizedTableView.swift */; };
 		08FD6EC12C1A48710035FB2A /* SynonymCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */; };
 		08FD6EC22C1A48710035FB2A /* SynonymCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FD6EC02C1A48710035FB2A /* SynonymCell.xib */; };
 		08FD6EC42C1A4A1A0035FB2A /* SynonymCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */; };
@@ -117,6 +118,7 @@
 		087C371F2C1B1AA400E4904E /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		087C37202C1B1AA400E4904E /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		087C37232C1B1D3300E4904E /* FilterCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellPresenter.swift; sourceTree = "<group>"; };
+		087C37642C1B399900E4904E /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 		08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCell.swift; sourceTree = "<group>"; };
 		08FD6EC02C1A48710035FB2A /* SynonymCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SynonymCell.xib; sourceTree = "<group>"; };
 		08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCellPresenter.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				08FD6EC62C1A75660035FB2A /* LoadingView.swift */,
+				087C37642C1B399900E4904E /* SelfSizedTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0856DB6D2C155F9300B5B9D2 /* SearchViewController.swift in Sources */,
+				087C37652C1B399900E4904E /* SelfSizedTableView.swift in Sources */,
 				0878EAE52C167BC6007885E0 /* DetailRouter.swift in Sources */,
 				0856DB532C13326B00B5B9D2 /* BaseViewController.swift in Sources */,
 				0856DB6F2C155FAE00B5B9D2 /* SearchInteractor.swift in Sources */,
