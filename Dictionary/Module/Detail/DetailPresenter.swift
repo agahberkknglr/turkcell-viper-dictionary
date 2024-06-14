@@ -19,7 +19,7 @@ protocol DetailPresenterProtocol {
     func filterItems() -> Int
     func cellForFilter(_ index: IndexPath) -> String
     func filterByPartOfSpeech(_ partOfSpeech: String?, _  indexPath: IndexPath)
-    func getSelectedFilterIndex() -> IndexPath?
+    func getSelectedFilterIndexes() -> [IndexPath]
     func meaningsForSelectedPartOfSpeech() -> [WordData.Meanings]
     func setTimer()
 }
@@ -33,8 +33,10 @@ final class DetailPresenter {
     private var wordData: WordData?
     private var audioURL: URL?
     private var wordSynonymData: [String]?
-    private var selectedPartOfSpeech: String?
-    private var selectedFilterIndex: IndexPath?
+   //private var selectedPartOfSpeech: String?
+   //private var selectedFilterIndex: IndexPath?
+    private var selectedPartOfSpeech: [String] = []
+    private var selectedFilterIndexes: [IndexPath] = []
     private var timer: Timer?
     
     
@@ -98,20 +100,37 @@ extension DetailPresenter: DetailPresenterProtocol {
     }
     
     func filterByPartOfSpeech(_ partOfSpeech: String?,_ indexPath: IndexPath) {
-        self.selectedPartOfSpeech = partOfSpeech
-        self.selectedFilterIndex = indexPath
+        //self.selectedPartOfSpeech = partOfSpeech
+        //self.selectedFilterIndex = indexPath
+        
+        guard let partOfSpeech = partOfSpeech else { return }
+
+        if let index = selectedPartOfSpeech.firstIndex(of: partOfSpeech) {
+            selectedPartOfSpeech.remove(at: index)
+            selectedFilterIndexes.remove(at: index)
+        } else {
+            selectedPartOfSpeech.append(partOfSpeech)
+            selectedFilterIndexes.append(indexPath)
+        }
+        
         view?.reloadData()
     }
     
-    func getSelectedFilterIndex() -> IndexPath? {
-        return selectedFilterIndex
+    func getSelectedFilterIndexes() -> [IndexPath] {
+        return selectedFilterIndexes
     }
     
     func meaningsForSelectedPartOfSpeech() -> [WordData.Meanings] {
-        guard let selectedPartOfSpeech = selectedPartOfSpeech, let meanings = wordData?.meanings else {
+        
+        guard !selectedPartOfSpeech.isEmpty, let meanings = wordData?.meanings else {
             return wordData?.meanings ?? []
         }
-        return meanings.filter { $0.partOfSpeech == selectedPartOfSpeech }
+        return meanings.filter { selectedPartOfSpeech.contains($0.partOfSpeech ?? "") }
+        
+        //guard let selectedPartOfSpeech = selectedPartOfSpeech, let meanings = wordData?.meanings else {
+        //    return wordData?.meanings ?? []
+        //}
+        //return meanings.filter { $0.partOfSpeech == selectedPartOfSpeech }
     }
     
     func setTimer() {

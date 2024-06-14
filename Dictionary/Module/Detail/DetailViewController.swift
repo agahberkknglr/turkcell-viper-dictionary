@@ -123,6 +123,7 @@ extension DetailViewController: DetailViewControllerProtocol {
     }
 }
 
+//MARK: - UITableViewDataSource
 extension DetailViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -154,6 +155,7 @@ extension DetailViewController: UITableViewDelegate {
     }
 }
 
+//MARK: - UICollectionViewDelegate
 extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.synonymCollectionView {
@@ -190,7 +192,9 @@ extension DetailViewController: UICollectionViewDataSource {
             let cellPresenter = FilterCellPresenter(view: cell, filter: filter)
             cell.cellPresenter = cellPresenter
             
-            let isSelected = presenter.getSelectedFilterIndex() == indexPath
+            //let isSelected = presenter.getSelectedFilterIndex() == indexPath
+            let isSelected = presenter.getSelectedFilterIndexes().contains(indexPath)
+            print("isselected: \(isSelected)" )
             cell.filterLabelIsSelected(isSelected)
             return cell
         }
