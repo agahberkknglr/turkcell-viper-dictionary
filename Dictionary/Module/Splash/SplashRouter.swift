@@ -36,7 +36,6 @@ final class SplashRouter {
 
 extension SplashRouter: SplashRouterProtocol {
     func navigate(_ route: SplashRoutes) {
-        print("navigate splash")
         switch route {
         case .search:
             guard let window = viewController?.view.window else { return }

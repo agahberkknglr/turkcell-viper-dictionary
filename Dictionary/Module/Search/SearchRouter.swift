@@ -25,8 +25,6 @@ final class SearchRouter {
         
         return view
     }
-    
-    
 }
 
 extension SearchRouter: SearchRouterProtocol {

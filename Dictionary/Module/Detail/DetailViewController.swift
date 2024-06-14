@@ -82,6 +82,7 @@ extension DetailViewController: DetailViewControllerProtocol {
     func setupSoundButton(isEnabled: Bool) {
         DispatchQueue.main.async {
             self.wordAudioButton.isEnabled = isEnabled
+            self.wordAudioButton.isHidden = !isEnabled
         }
     }
     
@@ -109,6 +110,7 @@ extension DetailViewController: DetailViewControllerProtocol {
         loadingView = LoadingView(frame: view.bounds)
         if let loadingView = loadingView {
             view.addSubview(loadingView)
+            navigationController?.navigationBar.isHidden = true
         }
     }
     
@@ -117,6 +119,7 @@ extension DetailViewController: DetailViewControllerProtocol {
             self.loadingView?.removeFromSuperview()
             self.loadingView = nil
         }
+        navigationController?.navigationBar.isHidden = false
     }
     
     func showErrorAlertAndPop() {
@@ -128,6 +131,7 @@ extension DetailViewController: DetailViewControllerProtocol {
         self.present(alert, animated: true)
     }
     
+    //MARK: - TestIdentifier
     func setAccessibilityIdentifiers() {
         wordTitleLabel.accessibilityIdentifier = "wordTitleLabel"
         wordSynonymLabel.accessibilityIdentifier = "wordSynonymLabel"

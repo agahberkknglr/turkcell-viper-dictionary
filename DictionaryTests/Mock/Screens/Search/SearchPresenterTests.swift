@@ -17,7 +17,6 @@ final class SearchPresenterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        
         view = .init()
         interactor = .init()
         router = .init()

@@ -51,6 +51,11 @@
 		087C376C2C1C781900E4904E /* MockSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C376B2C1C781900E4904E /* MockSearchInteractor.swift */; };
 		087C376E2C1C785400E4904E /* MockSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C376D2C1C785400E4904E /* MockSearchRouter.swift */; };
 		087C37702C1C797600E4904E /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C376F2C1C797600E4904E /* SearchPresenterTests.swift */; };
+		087C37732C1CC2A400E4904E /* MockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37722C1CC2A400E4904E /* MockDetailViewController.swift */; };
+		087C37752C1CC2B400E4904E /* MockDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37742C1CC2B400E4904E /* MockDetailInteractor.swift */; };
+		087C37772C1CC2C500E4904E /* MockDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37762C1CC2C500E4904E /* MockDetailRouter.swift */; };
+		087C37792C1CC2DA00E4904E /* Word.json in Resources */ = {isa = PBXBuildFile; fileRef = 087C37782C1CC2DA00E4904E /* Word.json */; };
+		087C377B2C1CC30400E4904E /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C377A2C1CC30400E4904E /* DetailPresenterTests.swift */; };
 		08FD6EC12C1A48710035FB2A /* SynonymCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */; };
 		08FD6EC22C1A48710035FB2A /* SynonymCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FD6EC02C1A48710035FB2A /* SynonymCell.xib */; };
 		08FD6EC42C1A4A1A0035FB2A /* SynonymCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */; };
@@ -125,6 +130,11 @@
 		087C376B2C1C781900E4904E /* MockSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchInteractor.swift; sourceTree = "<group>"; };
 		087C376D2C1C785400E4904E /* MockSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRouter.swift; sourceTree = "<group>"; };
 		087C376F2C1C797600E4904E /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
+		087C37722C1CC2A400E4904E /* MockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailViewController.swift; sourceTree = "<group>"; };
+		087C37742C1CC2B400E4904E /* MockDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailInteractor.swift; sourceTree = "<group>"; };
+		087C37762C1CC2C500E4904E /* MockDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailRouter.swift; sourceTree = "<group>"; };
+		087C37782C1CC2DA00E4904E /* Word.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Word.json; sourceTree = "<group>"; };
+		087C377A2C1CC30400E4904E /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCell.swift; sourceTree = "<group>"; };
 		08FD6EC02C1A48710035FB2A /* SynonymCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SynonymCell.xib; sourceTree = "<group>"; };
 		08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCellPresenter.swift; sourceTree = "<group>"; };
@@ -336,6 +346,7 @@
 		087C37692C1C77D600E4904E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				087C37712C1C9DEF00E4904E /* Detail */,
 				087C376A2C1C77FB00E4904E /* Search */,
 			);
 			path = Screens;
@@ -350,6 +361,18 @@
 				087C376F2C1C797600E4904E /* SearchPresenterTests.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		087C37712C1C9DEF00E4904E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				087C37722C1CC2A400E4904E /* MockDetailViewController.swift */,
+				087C37742C1CC2B400E4904E /* MockDetailInteractor.swift */,
+				087C37762C1CC2C500E4904E /* MockDetailRouter.swift */,
+				087C37782C1CC2DA00E4904E /* Word.json */,
+				087C377A2C1CC30400E4904E /* DetailPresenterTests.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		08FD6EBC2C1A482F0035FB2A /* TableViewCell */ = {
@@ -531,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087C37792C1CC2DA00E4904E /* Word.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,11 +612,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087C377B2C1CC30400E4904E /* DetailPresenterTests.swift in Sources */,
 				087C37682C1C63A300E4904E /* MockSearchViewController.swift in Sources */,
 				087C37702C1C797600E4904E /* SearchPresenterTests.swift in Sources */,
 				0856DB302C13255400B5B9D2 /* DictionaryTests.swift in Sources */,
 				087C376E2C1C785400E4904E /* MockSearchRouter.swift in Sources */,
 				087C376C2C1C781900E4904E /* MockSearchInteractor.swift in Sources */,
+				087C37752C1CC2B400E4904E /* MockDetailInteractor.swift in Sources */,
+				087C37732C1CC2A400E4904E /* MockDetailViewController.swift in Sources */,
+				087C37772C1CC2C500E4904E /* MockDetailRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

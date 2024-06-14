@@ -21,8 +21,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kB8-Ua-vQJ">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DictionaryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-sz-smo">
-                            <rect key="frame" x="71.666666666666686" y="254.66666666666669" width="249.99999999999994" height="250"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dictionaryapp" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-sz-smo">
+                            <rect key="frame" x="71.666666666666686" y="254.66666666666669" width="250" height="250"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="250" id="0TL-Wz-bKe"/>
                                 <constraint firstAttribute="width" constant="250" id="ugj-be-Zcd"/>
@@ -48,7 +48,7 @@
         </view>
     </objects>
     <resources>
-        <image name="DictionaryIcon" width="1024" height="1024"/>
+        <image name="dictionaryapp" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

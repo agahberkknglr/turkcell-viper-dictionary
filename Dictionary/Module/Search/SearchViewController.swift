@@ -18,6 +18,7 @@ protocol SearchViewControllerProtocol: AnyObject {
 
 final class SearchViewController: BaseViewController {
     
+    //MARK: - Variables
     var presenter: SearchPresenterProtocol!
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -25,6 +26,8 @@ final class SearchViewController: BaseViewController {
     @IBOutlet weak var searchButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    //MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
@@ -53,7 +56,6 @@ extension SearchViewController: SearchViewControllerProtocol {
     
     func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        //view.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
         tableView.backgroundView?.addGestureRecognizer(tapGesture)
     }
@@ -108,6 +110,7 @@ extension SearchViewController: SearchViewControllerProtocol {
         tableView.reloadData()
     }
     
+    //MARK: - TestIdentifier
     func setAccessibilityIdentifiers() {
         searchBar.accessibilityIdentifier = "searchBar"
         searchButton.accessibilityIdentifier = "searchButton"
@@ -142,7 +145,7 @@ extension SearchViewController: UITableViewDelegate {
 //MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.numberOfRowsInSection()
+        return presenter.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

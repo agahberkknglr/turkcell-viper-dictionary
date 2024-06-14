@@ -42,7 +42,6 @@ extension SearchPresenter: SearchPresenterProtocol {
         view.setupSearchBar()
         view.isSearchBarEmpty()
         view.setTableView()
-        //view.setAccessibilityIdentifiers()
         fetchSearchHistory()
     }
     
