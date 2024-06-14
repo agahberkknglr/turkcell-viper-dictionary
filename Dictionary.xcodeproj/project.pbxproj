@@ -47,6 +47,10 @@
 		087C37222C1B1AA400E4904E /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087C37202C1B1AA400E4904E /* FilterCell.xib */; };
 		087C37242C1B1D3300E4904E /* FilterCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37232C1B1D3300E4904E /* FilterCellPresenter.swift */; };
 		087C37652C1B399900E4904E /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37642C1B399900E4904E /* SelfSizedTableView.swift */; };
+		087C37682C1C63A300E4904E /* MockSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C37672C1C63A300E4904E /* MockSearchViewController.swift */; };
+		087C376C2C1C781900E4904E /* MockSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C376B2C1C781900E4904E /* MockSearchInteractor.swift */; };
+		087C376E2C1C785400E4904E /* MockSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C376D2C1C785400E4904E /* MockSearchRouter.swift */; };
+		087C37702C1C797600E4904E /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C376F2C1C797600E4904E /* SearchPresenterTests.swift */; };
 		08FD6EC12C1A48710035FB2A /* SynonymCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */; };
 		08FD6EC22C1A48710035FB2A /* SynonymCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FD6EC02C1A48710035FB2A /* SynonymCell.xib */; };
 		08FD6EC42C1A4A1A0035FB2A /* SynonymCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */; };
@@ -117,6 +121,10 @@
 		087C37202C1B1AA400E4904E /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		087C37232C1B1D3300E4904E /* FilterCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellPresenter.swift; sourceTree = "<group>"; };
 		087C37642C1B399900E4904E /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		087C37672C1C63A300E4904E /* MockSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewController.swift; sourceTree = "<group>"; };
+		087C376B2C1C781900E4904E /* MockSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchInteractor.swift; sourceTree = "<group>"; };
+		087C376D2C1C785400E4904E /* MockSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRouter.swift; sourceTree = "<group>"; };
+		087C376F2C1C797600E4904E /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
 		08FD6EBF2C1A48710035FB2A /* SynonymCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCell.swift; sourceTree = "<group>"; };
 		08FD6EC02C1A48710035FB2A /* SynonymCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SynonymCell.xib; sourceTree = "<group>"; };
 		08FD6EC32C1A4A1A0035FB2A /* SynonymCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCellPresenter.swift; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 		0856DB2E2C13255400B5B9D2 /* DictionaryTests */ = {
 			isa = PBXGroup;
 			children = (
+				087C37662C1C638A00E4904E /* Mock */,
 				0856DB2F2C13255400B5B9D2 /* DictionaryTests.swift */,
 			);
 			path = DictionaryTests;
@@ -314,6 +323,33 @@
 				087C371D2C1AF71A00E4904E /* CoreDataManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		087C37662C1C638A00E4904E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				087C37692C1C77D600E4904E /* Screens */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		087C37692C1C77D600E4904E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				087C376A2C1C77FB00E4904E /* Search */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		087C376A2C1C77FB00E4904E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				087C37672C1C63A300E4904E /* MockSearchViewController.swift */,
+				087C376B2C1C781900E4904E /* MockSearchInteractor.swift */,
+				087C376D2C1C785400E4904E /* MockSearchRouter.swift */,
+				087C376F2C1C797600E4904E /* SearchPresenterTests.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		08FD6EBC2C1A482F0035FB2A /* TableViewCell */ = {
@@ -552,7 +588,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087C37682C1C63A300E4904E /* MockSearchViewController.swift in Sources */,
+				087C37702C1C797600E4904E /* SearchPresenterTests.swift in Sources */,
 				0856DB302C13255400B5B9D2 /* DictionaryTests.swift in Sources */,
+				087C376E2C1C785400E4904E /* MockSearchRouter.swift in Sources */,
+				087C376C2C1C781900E4904E /* MockSearchInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

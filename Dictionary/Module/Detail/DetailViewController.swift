@@ -40,6 +40,7 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        setAccessibilityIdentifiers()
     }
     
     @IBAction func wordAudioButtonAction(_ sender: UIButton) {
@@ -125,6 +126,15 @@ extension DetailViewController: DetailViewControllerProtocol {
             self.navigationController?.popViewController(animated: true)
         }))
         self.present(alert, animated: true)
+    }
+    
+    func setAccessibilityIdentifiers() {
+        wordTitleLabel.accessibilityIdentifier = "wordTitleLabel"
+        wordSynonymLabel.accessibilityIdentifier = "wordSynonymLabel"
+        wordAudioButton.accessibilityIdentifier = "wordAudioButton"
+        tableView.accessibilityIdentifier = "resultsTableView"
+        filterCollectionView.accessibilityIdentifier = "filterCollectionView"
+        synonymCollectionView.accessibilityIdentifier = "synonymCollectionView"
     }
 }
 

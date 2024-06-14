@@ -28,6 +28,7 @@ final class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        setAccessibilityIdentifiers()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -105,6 +106,11 @@ extension SearchViewController: SearchViewControllerProtocol {
     
     func updateSearchHistory() {
         tableView.reloadData()
+    }
+    
+    func setAccessibilityIdentifiers() {
+        searchBar.accessibilityIdentifier = "searchBar"
+        searchButton.accessibilityIdentifier = "searchButton"
     }
     
 }

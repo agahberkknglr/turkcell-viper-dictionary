@@ -13,7 +13,7 @@ protocol WordCellProtocol: AnyObject {
     func setExampleLabel(_ text: String)
 }
 
-class WordCell: UITableViewCell {
+final class WordCell: UITableViewCell {
     
     static let identifier = "WordCell"
 
