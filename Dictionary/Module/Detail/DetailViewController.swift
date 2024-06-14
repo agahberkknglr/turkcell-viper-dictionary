@@ -110,7 +110,9 @@ extension DetailViewController: DetailViewControllerProtocol {
         loadingView = LoadingView(frame: view.bounds)
         if let loadingView = loadingView {
             view.addSubview(loadingView)
-            navigationController?.navigationBar.isHidden = true
+            DispatchQueue.main.async {
+                self.navigationController?.navigationBar.isHidden = true
+            }
         }
     }
     
@@ -118,8 +120,8 @@ extension DetailViewController: DetailViewControllerProtocol {
         DispatchQueue.main.async {
             self.loadingView?.removeFromSuperview()
             self.loadingView = nil
+            self.navigationController?.navigationBar.isHidden = false
         }
-        navigationController?.navigationBar.isHidden = false
     }
     
     func showErrorAlertAndPop() {

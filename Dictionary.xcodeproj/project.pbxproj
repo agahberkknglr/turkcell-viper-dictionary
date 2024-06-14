@@ -195,7 +195,6 @@
 				0856DB4A2C13311900B5B9D2 /* Module */,
 				0856DB482C1330D200B5B9D2 /* App */,
 				0856DB492C1330DD00B5B9D2 /* Resources */,
-				0856DB192C13255300B5B9D2 /* ViewController.swift */,
 				0856DB262C13255400B5B9D2 /* Info.plist */,
 			);
 			path = Dictionary;
@@ -407,6 +406,7 @@
 		08FD6EC52C1A752F0035FB2A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0856DB192C13255300B5B9D2 /* ViewController.swift */,
 				08FD6EC62C1A75660035FB2A /* LoadingView.swift */,
 				087C37642C1B399900E4904E /* SelfSizedTableView.swift */,
 			);
