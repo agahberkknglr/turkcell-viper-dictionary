@@ -40,17 +40,21 @@ class CoreDataManager {
     
     func saveWord(recent: String) {
         let fetchRequest: NSFetchRequest<SearchHistory> = SearchHistory.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "recent == %@", recent)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+        fetchRequest.fetchLimit = 5
 
         do {
-            let results = try context.fetch(fetchRequest)
-            if results.isEmpty {
-                let searchHistory = SearchHistory(context: context)
-                searchHistory.recent = recent
-                saveContext()
-            } else {
-                print("Word already exists in search history.")
+            let lastFiveItems = try context.fetch(fetchRequest)
+            let lastFiveWords = lastFiveItems.compactMap { $0.recent }
+            if lastFiveWords.contains(recent) {
+                print("Word already exists in the last 5 items of search history.")
+                return
             }
+            
+            let searchHistory = SearchHistory(context: context)
+            searchHistory.recent = recent
+            searchHistory.timestamp = Date()
+            saveContext()
         } catch {
             print("Failed to fetch search history: \(error)")
         }
