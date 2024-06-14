@@ -35,8 +35,7 @@
  ## Screenshots
 | Image 1                | Image 2                |
 |------------------------|------------------------|
-| ![Simulator Screenshot - iPhone SE (3rd generation) - 2024-06-14 at 18 40 13](https://github.com/agahberkknglr/turkcell-viper-dictionary/assets/79965739/0d8c8d0e-fe28-4796-8ceb-2a5e1af68bb1) |
-![Simulator Screenshot - iPhone SE (3rd generation) - 2024-06-14 at 18 40 51](https://github.com/agahberkknglr/turkcell-viper-dictionary/assets/79965739/413daed8-f4d2-47a7-9786-17bdda1c85a1) |
+| ![Simulator Screenshot - iPhone SE (3rd generation) - 2024-06-14 at 18 40 13](https://github.com/agahberkknglr/turkcell-viper-dictionary/assets/79965739/0d8c8d0e-fe28-4796-8ceb-2a5e1af68bb1) | ![Simulator Screenshot - iPhone SE (3rd generation) - 2024-06-14 at 18 40 51](https://github.com/agahberkknglr/turkcell-viper-dictionary/assets/79965739/413daed8-f4d2-47a7-9786-17bdda1c85a1) |
 | Search Page | Detail Page |
 
 ## Gif
