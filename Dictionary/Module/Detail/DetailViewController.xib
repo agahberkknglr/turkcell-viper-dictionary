@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Dictionary" customModuleProvider="target">
             <connections>
                 <outlet property="filterCollectionView" destination="Zfs-np-Yep" id="ouG-Rl-02n"/>
+                <outlet property="stackView" destination="sFf-3c-ndo" id="BCe-bJ-wlu"/>
                 <outlet property="synonymCollectionView" destination="LXn-jj-Km3" id="gk6-z6-ux4"/>
                 <outlet property="tableView" destination="jRM-Y0-MLM" id="aTz-Lu-6rb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,19 +29,19 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="759" translatesAutoresizingMaskIntoConstraints="NO" id="feD-kg-XQ0">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="849"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="829"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sFf-3c-ndo">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="849"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="829"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-sz-M1v">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="160"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCo-R9-B9g">
-                                                    <rect key="frame" x="16" y="16" width="361" height="144"/>
+                                                    <rect key="frame" x="16" y="16" width="361" height="124"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="itq-zD-JWB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="144"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="124"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5D6-5o-D7w">
                                                                     <rect key="frame" x="0.0" y="0.0" width="311" height="50.333333333333336"/>
@@ -55,7 +56,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Zfs-np-Yep">
-                                                                    <rect key="frame" x="0.0" y="84.333333333333343" width="311" height="59.666666666666657"/>
+                                                                    <rect key="frame" x="0.0" y="84.333333333333343" width="311" height="39.666666666666657"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yvC-Fn-uhu">
                                                                         <size key="itemSize" width="128" height="128"/>
@@ -67,7 +68,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUK-tH-mbF">
-                                                            <rect key="frame" x="311" y="0.0" width="50" height="144"/>
+                                                            <rect key="frame" x="311" y="0.0" width="50" height="124"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="RmO-YJ-5rN"/>
                                                             </constraints>
@@ -89,21 +90,21 @@
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
                                                 <constraint firstItem="tCo-R9-B9g" firstAttribute="top" secondItem="ezT-sz-M1v" secondAttribute="top" constant="16" id="4AG-qg-PX6"/>
-                                                <constraint firstAttribute="height" constant="180" id="H3o-kM-98E"/>
+                                                <constraint firstAttribute="height" constant="160" id="H3o-kM-98E"/>
                                                 <constraint firstAttribute="trailing" secondItem="tCo-R9-B9g" secondAttribute="trailing" constant="16" id="YZ6-1j-raU"/>
                                                 <constraint firstAttribute="bottom" secondItem="tCo-R9-B9g" secondAttribute="bottom" constant="20" symbolic="YES" id="lzl-ID-5sv"/>
                                                 <constraint firstItem="tCo-R9-B9g" firstAttribute="leading" secondItem="ezT-sz-M1v" secondAttribute="leading" constant="16" id="udJ-4k-eEl"/>
                                             </constraints>
                                         </view>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jRM-Y0-MLM" customClass="SelfSizedTableView" customModule="Dictionary" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="180" width="393" height="479"/>
+                                            <rect key="frame" x="0.0" y="160" width="393" height="479"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="PcH-uY-I5T"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="PcH-uY-I5T"/>
                                             </constraints>
                                         </tableView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igx-0g-KYp">
-                                            <rect key="frame" x="0.0" y="659" width="393" height="190"/>
+                                            <rect key="frame" x="0.0" y="639" width="393" height="190"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WFW-0j-aXL">
                                                     <rect key="frame" x="16" y="16" width="361" height="158"/>

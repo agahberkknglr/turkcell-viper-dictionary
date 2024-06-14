@@ -21,6 +21,7 @@ protocol DetailPresenterProtocol {
     func filterByPartOfSpeech(_ partOfSpeech: String?, _  indexPath: IndexPath)
     func getSelectedFilterIndex() -> IndexPath?
     func meaningsForSelectedPartOfSpeech() -> [WordData.Meanings]
+    func setTimer()
 }
 
 final class DetailPresenter {
@@ -34,6 +35,7 @@ final class DetailPresenter {
     private var wordSynonymData: [String]?
     private var selectedPartOfSpeech: String?
     private var selectedFilterIndex: IndexPath?
+    private var timer: Timer?
     
     
     init(view: DetailViewControllerProtocol? = nil, router: DetailRouterProtocol, interactor: DetailInteractorProtocol, word: String) {
@@ -51,27 +53,21 @@ extension DetailPresenter: DetailPresenterProtocol {
         view?.setTableView()
         view?.setSynonymCollectionView()
         view?.setFilterCollectionView()
+        setTimer()
         interactor.fetchWord(with: word)
         interactor.fetchWordSynonym(with: word)
     }
     
     func numberOfSections() -> Int {
-        
         meaningsForSelectedPartOfSpeech().count
-
-        //wordData?.meanings?.count ?? 0
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
         meaningsForSelectedPartOfSpeech()[section].definitions?.count ?? 0
-
-        //wordData?.meanings?[section].definitions?.count ?? 0
     }
     
     func meaningForSection(_ section: Int) -> WordData.Meanings {
         return meaningsForSelectedPartOfSpeech()[section]
-
-        //return wordData!.meanings![section]
     }
     
     func tapPlaySound() {
@@ -117,10 +113,20 @@ extension DetailPresenter: DetailPresenterProtocol {
         }
         return meanings.filter { $0.partOfSpeech == selectedPartOfSpeech }
     }
+    
+    func setTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(handleTimeout), userInfo: nil, repeats: false)
+    }
+    
+    @objc private func handleTimeout() {
+        view?.hideLoadingView()
+        view?.showErrorAlertAndPop()
+    }
 }
 
 extension DetailPresenter: DetailInteractorOutputProtocol {
     func fetchWordOutputs(_ wordData: WordData) {
+        timer?.invalidate()
         self.wordData = wordData
         
         view?.setWordTitleLabel(with: wordData.word ?? "")

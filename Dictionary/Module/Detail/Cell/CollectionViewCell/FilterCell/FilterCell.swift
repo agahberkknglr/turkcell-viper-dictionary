@@ -33,7 +33,7 @@ final class FilterCell: UICollectionViewCell {
 
 extension FilterCell: FilterCellProtocol {
     func setfilterLabel(_ filter: String) {
-        filterLabel.text = filter
+        filterLabel.text = filter.capitalized
         filterLabel.layer.cornerRadius = 15
         filterLabel.layer.borderWidth = 1
         filterLabel.textColor = UIColor.label

@@ -19,7 +19,7 @@ protocol DetailViewControllerProtocol: AnyObject {
     func setFilterCollectionView()
     func showLoadingView()
     func hideLoadingView()
-
+    func showErrorAlertAndPop()
 }
 
 final class DetailViewController: UIViewController {
@@ -30,6 +30,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var synonymCollectionView: UICollectionView!
+    @IBOutlet weak var stackView: UIStackView!
     
     var presenter: DetailPresenterProtocol!
     var word: String?
@@ -110,6 +111,15 @@ extension DetailViewController: DetailViewControllerProtocol {
             self.loadingView?.removeFromSuperview()
             self.loadingView = nil
         }
+    }
+    
+    func showErrorAlertAndPop() {
+        stackView.isHidden = true
+        let alert = UIAlertController(title: "No Definitions Found", message: "Sorry pal, we couldn't find definitions for the word you were looking for.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true)
     }
 }
 
