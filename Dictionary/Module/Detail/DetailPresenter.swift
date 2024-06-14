@@ -33,12 +33,9 @@ final class DetailPresenter {
     private var wordData: WordData?
     private var audioURL: URL?
     private var wordSynonymData: [String]?
-   //private var selectedPartOfSpeech: String?
-   //private var selectedFilterIndex: IndexPath?
     private var selectedPartOfSpeech: [String] = []
     private var selectedFilterIndexes: [IndexPath] = []
     private var timer: Timer?
-    
     
     init(view: DetailViewControllerProtocol? = nil, router: DetailRouterProtocol, interactor: DetailInteractorProtocol, word: String) {
         self.view = view
@@ -100,9 +97,6 @@ extension DetailPresenter: DetailPresenterProtocol {
     }
     
     func filterByPartOfSpeech(_ partOfSpeech: String?,_ indexPath: IndexPath) {
-        //self.selectedPartOfSpeech = partOfSpeech
-        //self.selectedFilterIndex = indexPath
-        
         guard let partOfSpeech = partOfSpeech else { return }
 
         if let index = selectedPartOfSpeech.firstIndex(of: partOfSpeech) {
@@ -112,7 +106,6 @@ extension DetailPresenter: DetailPresenterProtocol {
             selectedPartOfSpeech.append(partOfSpeech)
             selectedFilterIndexes.append(indexPath)
         }
-        
         view?.reloadData()
     }
     
@@ -126,11 +119,6 @@ extension DetailPresenter: DetailPresenterProtocol {
             return wordData?.meanings ?? []
         }
         return meanings.filter { selectedPartOfSpeech.contains($0.partOfSpeech ?? "") }
-        
-        //guard let selectedPartOfSpeech = selectedPartOfSpeech, let meanings = wordData?.meanings else {
-        //    return wordData?.meanings ?? []
-        //}
-        //return meanings.filter { $0.partOfSpeech == selectedPartOfSpeech }
     }
     
     func setTimer() {

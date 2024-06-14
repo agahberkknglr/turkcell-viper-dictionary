@@ -47,7 +47,9 @@ final class DetailViewController: UIViewController {
     }
 }
 
+//MARK: - Protocol Extension
 extension DetailViewController: DetailViewControllerProtocol {
+    
     func setWordTitleLabel(with text: String) {
         DispatchQueue.main.async {
             self.wordTitleLabel.text = text.capitalized
@@ -56,6 +58,9 @@ extension DetailViewController: DetailViewControllerProtocol {
     
     func setSynonymLabel(with text: String) {
         DispatchQueue.main.async {
+            if text.isEmpty {
+                self.wordSynonymLabel.isHidden = true
+            }
             self.wordSynonymLabel.text = text
         }
     }
@@ -145,6 +150,7 @@ extension DetailViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - UITableViewDelegate
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
@@ -153,6 +159,8 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
+    
 }
 
 //MARK: - UICollectionViewDelegate
@@ -160,16 +168,15 @@ extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.synonymCollectionView {
             let synonym = presenter.synonymForSection(indexPath.item)
-            print("select synonym \(synonym)")
             presenter.didSelectSynonym(synonym)
         } else {
             let filter = presenter.cellForFilter(indexPath)
-            print("selected filter \(filter)")
             presenter.filterByPartOfSpeech(filter, indexPath)
         }
     }
 }
 
+//MARK: - UICollectionViewDataSource
 extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.synonymCollectionView {
@@ -191,10 +198,7 @@ extension DetailViewController: UICollectionViewDataSource {
             let filter = presenter.cellForFilter(indexPath)
             let cellPresenter = FilterCellPresenter(view: cell, filter: filter)
             cell.cellPresenter = cellPresenter
-            
-            //let isSelected = presenter.getSelectedFilterIndex() == indexPath
             let isSelected = presenter.getSelectedFilterIndexes().contains(indexPath)
-            print("isselected: \(isSelected)" )
             cell.filterLabelIsSelected(isSelected)
             return cell
         }
@@ -202,6 +206,7 @@ extension DetailViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == self.synonymCollectionView {
@@ -233,8 +238,7 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
             let collectionViewWidth = synonymCollectionView.frame.width
             let collectionViewHeight = synonymCollectionView.frame.width
             let cellWidth = (collectionViewWidth - 15 ) / 3
-            let cellHeight = cellWidth / 2.5
-            
+            let cellHeight = cellWidth / 2.5 
             return CGSize(width: cellWidth , height: cellHeight)
         }
         else {
@@ -242,12 +246,7 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
             let collectionViewHeight = filterCollectionView.frame.width
             let cellWidth = (collectionViewWidth - 15 ) / 3
             let cellHeight = cellWidth / 2.5
-            
             return CGSize(width: cellWidth , height: cellHeight)
         }
-        
     }
-
 }
-
-

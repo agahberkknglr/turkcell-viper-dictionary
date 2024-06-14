@@ -15,20 +15,15 @@ protocol FilterCellProtocol: AnyObject {
 final class FilterCell: UICollectionViewCell {
     
     static let identifier = "FilterCell"
-
     @IBOutlet weak var filterLabel: UILabel!
-    
     var cellPresenter: FilterCellPresenterProtocol! {
         didSet {
             cellPresenter.load()
         }
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
 }
 
 extension FilterCell: FilterCellProtocol {
@@ -48,6 +43,5 @@ extension FilterCell: FilterCellProtocol {
         else {
             filterLabel.layer.borderColor = UIColor.label.cgColor
         }
-        
     }
 }

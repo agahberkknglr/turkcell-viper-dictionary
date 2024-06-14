@@ -46,6 +46,8 @@ final class SearchViewController: BaseViewController {
     }
 }
 
+
+//MARK: - Protocol Extension
 extension SearchViewController: SearchViewControllerProtocol {
     
     func setupTapGesture() {
@@ -107,6 +109,7 @@ extension SearchViewController: SearchViewControllerProtocol {
     
 }
 
+//MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let searchBarHasText = !searchText.isEmpty
@@ -115,13 +118,22 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+//MARK: - UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let word = presenter.cellForRowAt(indexPath.row)
         presenter.searchButtonTapped(with: word)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.deleteRow(at: indexPath.row)
+        }
+    }
 }
 
+
+//MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.numberOfRowsInSection()
@@ -137,6 +149,7 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - UIGestureRecognizerDelegate
 extension SearchViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true

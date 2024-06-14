@@ -60,6 +60,21 @@ class CoreDataManager {
         }
     }
     
+    func deleteWord(recent: String) {
+        let fetchRequest: NSFetchRequest<SearchHistory> = SearchHistory.fetchRequest()
+         fetchRequest.predicate = NSPredicate(format: "recent == %@", String(recent))
+         
+         do {
+             let results = try context.fetch(fetchRequest)
+             for result in results {
+                 context.delete(result)
+             }
+             saveContext()
+         } catch {
+             print("Failed to fetch favorite games: \(error)")
+         }
+    }
+    
     func fetchSearchHistory() -> [String] {
         let fetchRequest: NSFetchRequest<SearchHistory> = SearchHistory.fetchRequest()
         do {

@@ -14,6 +14,7 @@ protocol SearchPresenterProtocol {
     func searchButtonTapped(with word: String)
     func numberOfRowsInSection() -> Int
     func cellForRowAt(_ row: Int) -> String
+    func deleteRow(at index: Int)
 }
 
 final class SearchPresenter {
@@ -23,7 +24,7 @@ final class SearchPresenter {
     
     private var searchHistory: [String] = []
     private var lastFiveSearchHistory: [String] {
-        return Array(searchHistory.suffix(5))
+        return Array(searchHistory.prefix(5))
     }
     
     init(view: SearchViewControllerProtocol!, router: SearchRouterProtocol, interactor: SearchInteractorProtocol) {
@@ -56,7 +57,7 @@ extension SearchPresenter: SearchPresenterProtocol {
     }
     
     private func fetchSearchHistory() {
-        searchHistory = CoreDataManager.shared.fetchSearchHistory()
+        searchHistory = CoreDataManager.shared.fetchSearchHistory().reversed()
         view.updateSearchHistory()
     }
     
@@ -66,6 +67,12 @@ extension SearchPresenter: SearchPresenterProtocol {
     
     func cellForRowAt(_ row: Int) -> String {
          lastFiveSearchHistory[row]
+    }
+    
+    func deleteRow(at index: Int) {
+        let wordToDelete = lastFiveSearchHistory[index]
+        CoreDataManager.shared.deleteWord(recent: wordToDelete)
+        fetchSearchHistory()
     }
 
 }
